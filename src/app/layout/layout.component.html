@@ -1,0 +1,10 @@
+<nz-layout class="layout">
+  <x-header></x-header>
+  <x-aside [menus]="menuData"></x-aside>
+  <nz-layout>
+    <nz-content class="content">
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer></nz-footer>
+  </nz-layout>
+</nz-layout>

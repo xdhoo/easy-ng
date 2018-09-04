@@ -1,0 +1,87 @@
+@import '../theme/blue-theme.less';
+::-webkit-scrollbar {  /* 滚动条整体部分 */
+    width:4px;
+    margin-right:2px;
+    background: rgba(221, 221, 221, 0.44);
+}
+.node-container{
+    width: 100%;
+    height: 100%;
+    min-width: 150px;
+    min-height: 60px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    overflow: hidden;
+    .node-container-title{
+      color: white;
+      padding-left: 10px;
+      line-height: 48px;
+      height: 70%;
+      width: 100%;
+    }
+    .node-container-success{
+      background: #228ACC;
+    }
+    .node-container-fail{
+      background: #FF0030;
+    }
+    .node-container-list{
+      background: white;
+      padding-left: 10px;
+      height: 100%;
+      line-height: 40px;
+    }
+    .node-delete{
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      z-index: 10; /* 使得该元素z层级大于最上层canvas */
+    }
+  }
+
+  /*******************************重写侧边栏样式***********************************************/
+  .ant-menu-inline-collapsed>div>.ant-menu-item .anticon+span,
+  .ant-menu-inline-collapsed>div>.ant-menu-submenu>.ant-menu-submenu-title .anticon+span{
+    max-width: 0;
+    display: inline-block;
+    opacity: 0;
+  }
+  .ant-menu-inline-collapsed>div>.ant-menu-submenu>.ant-menu-submenu-title .ant-menu-submenu-arrow{
+    display:none;
+  }
+  .ant-menu-inline-collapsed>div>.ant-menu-submenu>.ant-menu-submenu-title,
+  .ant-menu-dark.ant-menu-vertical .ant-menu-item{
+    left: 0;
+    text-overflow: clip;
+    padding: 0 32px!important;
+  }
+  .ant-menu-dark.ant-menu-submenu-popup{
+      background: rgba(86, 139, 160, 0.88)
+  }
+  /*******************************重写侧边栏样式***********************************************/
+
+  /*******************************重写tab样式***********************************************/
+  .ant-tabs-nav-container{
+    font-size: 16px;
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar {
+    .ant-tabs-tab{
+      border: none;
+    }
+    .ant-tabs-tab-active{
+      background: @base-color;
+      color: @base-color2;
+    }
+
+  }
+  /*******************************重写tab样式***********************************************/
+  .ant-form-explain, .ant-form-extra{
+    color:red;
+  }
+
+  .ant-message{
+
+    top: 40%;
+    line-height: 5;
+    font-size: 16px;
+  }

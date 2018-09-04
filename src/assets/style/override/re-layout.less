@@ -1,0 +1,39 @@
+@import '../theme/blue-theme.less';
+.s-layout{
+  background-color: #fff; 
+  .s-sider{
+    background-color: @base-color2;
+    .s-logo{
+      background-color: darken(@base-color,10%);
+      height: @header-hieght;
+    }
+    ul{
+      background-color: @base-color2;
+    }
+  }
+  .s-layout-right{
+    background-color: @base-color;
+    .s-header{
+      padding: 0 20px;
+      background-color: @base-color;
+      .s-header-trigger{
+        color: darken(@base-color2,10%);
+        font-size: 22px;
+        i:hover{
+          color: #fff;
+        }
+      }
+      .s-header-tools{
+        position: absolute; 
+        right: 10px;
+        a{color: #fff;}
+      }
+    }
+    .s-content{
+      background-color: #fff;
+      border-radius: 10px 10px 0 0; 
+      margin:0 10px;
+    }
+  }
+  
+}

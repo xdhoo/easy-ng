@@ -1,0 +1,26 @@
+<div *ngFor="let button of buttons">
+  <ng-container *ngIf="button.visible">
+    <nz-popconfirm *ngIf="button.type === 'confirm';else commonTpl"
+      [nzTitle]="button.message" 
+      (nzOnConfirm)="popConfirm.emit({value:data,key:button.key})" 
+      (nzOnCancel)="popCancel.emit({value:data,key:button.key})" 
+      [nzPlacement]="button.placement || 'top'">
+      <button nz-popconfirm nz-button class="ant-btn"
+        [nzType]="button.className"
+        [nzSize]="button.size"
+        [nzShape]="button.shape">
+        <span *ngIf="button.icon" class="fa fa-{{button.icon}}"></span> {{button.title}}
+      </button>
+    </nz-popconfirm>
+    <ng-template #commonTpl>
+      <button nz-button
+        class="ant-btn"            
+        [nzType]="button.className"
+        [nzSize]="button.size"
+        [nzShape]="button.shape"
+        (click)="tbBtn.emit({value:data,key:btn.key})">
+        <span *ngIf="button.icon" class="fa fa-{{btn.icon}}"></span> {{button.title}}
+      </button>
+    </ng-template>
+  </ng-container>
+</div>

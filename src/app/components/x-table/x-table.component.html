@@ -1,0 +1,34 @@
+<nz-table
+  nzSize="middle"
+  #rowSelectionTable
+  [nzData]="xData"
+  [nzPageSize]="xPageSize"
+  [nzTotal]="xTotal"
+  [(nzPageIndex)]="xPageIndex"
+  [nzFrontPagination]="xFrontPagination"
+  (nzPageIndexChange)="xPageIndexChange.emit(pageIndex)"
+  (nzPageSizeChange)="refreshStatus()">
+  <thead>
+    <tr>
+      <th *ngFor="let column of xColumns">{{column.title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of xData">
+      <td *ngFor="let cell of xColumns">
+        <!-- render -->
+        <ng-template *ngIf="cell.render;else operatesTpl" [innerHtml]="cell.render(data) | html"></ng-template>
+        <!-- operates -->
+        <ng-template #operatesTpl>
+          <ng-container *ngIf="cell.buttons;else others">
+            <x-buttons [buttons]="cell.buttons"></x-buttons>
+          </ng-container>
+        </ng-template>
+        <!-- others -->
+        <ng-template #others>
+          {{data[cell.field]}}
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

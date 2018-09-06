@@ -12,10 +12,10 @@ export class XButtonsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.buttons.map(item=>{
+    this.buttons.map(item => {
       item.visible = item.visible ? item.visible(this.data) : true;
       item.type = item.type ? item.type : 'common';
-    })
+    });
   }
 
 }

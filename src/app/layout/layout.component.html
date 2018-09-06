@@ -1,7 +1,9 @@
-<nz-layout class="layout">
-  <x-header></x-header>
-  <x-aside [menus]="menuData"></x-aside>
+<nz-layout>
+  <x-header></x-header>  
   <nz-layout>
+    <nz-sider>
+      <x-aside [menus]="menuData" [style.width]="'200px'"></x-aside>
+    </nz-sider>
     <nz-content class="content">
       <router-outlet></router-outlet>
     </nz-content>

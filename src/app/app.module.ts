@@ -9,10 +9,13 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './layout/layout.module';
+import { ViewsModule } from './views/views.module';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +25,7 @@ import { LayoutModule } from './layout/layout.module';
     CommonModule,
     AppRoutingModule,
     LayoutModule,
+    ViewsModule,
     NgZorroAntdModule.forRoot()
 
   ],

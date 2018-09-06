@@ -15,7 +15,7 @@ export class LayoutComponent implements OnInit {
       children: [
         {
           title: 'A',
-          url: '/home/oa/leave',
+          url: '/home/dashboard',
           icon: 'anticon-schedule',
           subPage: []
         }, {
@@ -57,7 +57,7 @@ export class LayoutComponent implements OnInit {
       url: '/home/demo'
     }
   ];
-  
+
   constructor() { }
 
   ngOnInit() {
